@@ -2,14 +2,14 @@ import re
 from typing import Iterable
 
 class RgbValue:
-    """RgbValue
-    :class:
-    :parameters:
-      - `r`:
-      - `g`:
-      - `b`: 
-    """
+
     def __init__(self, r, g, b):
+        """Initializes an `RgbValue`.
+        :parameters:
+        - `r`: an 8-bit :class:`int` value denoting a red value.
+        - `g`: an 8-bit :class:`int` value denoting a green value.
+        - `b`: an 8-bit :class:`int` value denoting a blue value. 
+        """
         if isinstance(r, str):
             r = int(r, 16)
         if isinstance(g, str):
@@ -22,9 +22,35 @@ class RgbValue:
 
     @property
     def relative_luminance(self):
+        """Calculates the relative luminance of this `RgbValue`.
+
+        This method calculates relative luminance by first normalizing the rgb values,
+        then applying the following formula:
+
+            Y = 0.2126R + 0.7152G + 0.0722B
+
+        Where R, G, and B are this `RgbValue`'s values and Y is the return value.
+
+        Returns:
+            type: double -- value denoting relative luminance.
+        """
         return (0.2126 * (self.r / 255.0)) + (0.7152 * (self.g / 255.0)) + (0.0722 * (self.b / 255.0))
 
-    def contrast_ratio(self, other, precision):
+    def contrast_ratio(self, other, precision=2):
+        """Calculates the contrast ratio between this `RgbValue` and the
+        `other` rgb value and returns the value with the specified floating
+        point precision.
+        
+        Arguments:
+            other {[type]} -- [description]
+            precision {[type]} -- [description]
+        
+        Returns:
+            [type] -- [description]
+        >>> rgb = RgbValue(0, 0, 0)
+        >>> rgb.contrast_ratio(RgbValue(255, 255, 255))
+        21.0
+        """
         assert isinstance(other, RgbValue)
         darker, lighter = sorted([other, self], key=lambda c: c.relative_luminance)
         return round((lighter.relative_luminance + 0.05) / (darker.relative_luminance + 0.05), precision)
