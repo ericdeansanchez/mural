@@ -205,17 +205,6 @@
 <dt id="mural.color.RgbValue">
 <em class="property">class </em><code class="sig-prename descclassname">mural.color.</code><code class="sig-name descname">RgbValue</code><span class="sig-paren">(</span><em class="sig-param">r</em>, <em class="sig-param">g</em>, <em class="sig-param">b</em><span class="sig-paren">)</span><a class="headerlink" href="#mural.color.RgbValue" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="field-list simple">
-<dt class="field-odd">Class</dt>
-<dd class="field-odd"><p></p></dd>
-<dt class="field-even">Parameters</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><cite>r</cite>:</p></li>
-<li><p><cite>g</cite>:</p></li>
-<li><p><cite>b</cite>:</p></li>
-</ul>
-</dd>
-</dl>
 <dl class="method">
 <dt id="mural.color.RgbValue.complement">
 <code class="sig-name descname">complement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mural.color.RgbValue.complement" title="Permalink to this definition">¶</a></dt>
@@ -234,7 +223,17 @@
 <dl class="method">
 <dt id="mural.color.RgbValue.relative_luminance">
 <em class="property">property </em><code class="sig-name descname">relative_luminance</code><a class="headerlink" href="#mural.color.RgbValue.relative_luminance" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Calculates the relative luminance of this <cite>RgbValue</cite>.</p>
+<p>This method calculates relative luminance by first normalizing the rgb values,
+then applying the following formula:</p>
+<blockquote>
+<div><p>Y = 0.2126R + 0.7152G + 0.0722B</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>double – returns a double precision value denoting relative luminance.</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -309,17 +308,6 @@
 <dt id="mural.RgbValue">
 <em class="property">class </em><code class="sig-prename descclassname">mural.</code><code class="sig-name descname">RgbValue</code><span class="sig-paren">(</span><em class="sig-param">r</em>, <em class="sig-param">g</em>, <em class="sig-param">b</em><span class="sig-paren">)</span><a class="headerlink" href="#mural.RgbValue" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="field-list simple">
-<dt class="field-odd">Class</dt>
-<dd class="field-odd"><p></p></dd>
-<dt class="field-even">Parameters</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><cite>r</cite>:</p></li>
-<li><p><cite>g</cite>:</p></li>
-<li><p><cite>b</cite>:</p></li>
-</ul>
-</dd>
-</dl>
 <dl class="method">
 <dt id="mural.RgbValue.complement">
 <code class="sig-name descname">complement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mural.RgbValue.complement" title="Permalink to this definition">¶</a></dt>
@@ -338,7 +326,17 @@
 <dl class="method">
 <dt id="mural.RgbValue.relative_luminance">
 <em class="property">property </em><code class="sig-name descname">relative_luminance</code><a class="headerlink" href="#mural.RgbValue.relative_luminance" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Calculates the relative luminance of this <cite>RgbValue</cite>.</p>
+<p>This method calculates relative luminance by first normalizing the rgb values,
+then applying the following formula:</p>
+<blockquote>
+<div><p>Y = 0.2126R + 0.7152G + 0.0722B</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>double – returns a double precision value denoting relative luminance.</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
