@@ -2,6 +2,13 @@ import re
 from typing import Iterable
 
 class RgbValue:
+    """RgbValue
+    :class:
+    :parameters:
+      - `r`:
+      - `g`:
+      - `b`: 
+    """
     def __init__(self, r, g, b):
         if isinstance(r, str):
             r = int(r, 16)
@@ -13,12 +20,6 @@ class RgbValue:
         self.g = g
         self.b = b
 
-    @classmethod
-    def from_hex(cls, hex_str: str):
-        assert len(hex_str) == 6
-        r, g, b = hex_str[:2], hex_str[2:4], hex_str[4:6]
-        return RgbValue(r, g, b)
-    
     @property
     def relative_luminance(self):
         return (0.2126 * (self.r / 255.0)) + (0.7152 * (self.g / 255.0)) + (0.0722 * (self.b / 255.0))
@@ -27,6 +28,16 @@ class RgbValue:
         assert isinstance(other, RgbValue)
         darker, lighter = sorted([other, self], key=lambda c: c.relative_luminance)
         return round((lighter.relative_luminance + 0.05) / (darker.relative_luminance + 0.05), precision)
+
+    def complement(self):
+        return RgbValue(255.0 - self.r, 255.0 - self.g, 255.0 - self.b)
+
+    @classmethod
+    def from_hex(cls, hex_str: str):
+        assert len(hex_str) == 6
+        r, g, b = hex_str[:2], hex_str[2:4], hex_str[4:6]
+        return RgbValue(r, g, b)
+    
 
     def __repr__(self):
         return f'RgbValue(r={self.r}, g={self.g}, b={self.b})'

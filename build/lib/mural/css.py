@@ -28,6 +28,10 @@ class RgbValue:
         darker, lighter = sorted([other, self], key=lambda c: c.relative_luminance)
         return round((lighter.relative_luminance + 0.05) / (darker.relative_luminance + 0.05), precision)
 
+    def complement(self, other):
+        assert isinstance(other, RgbValue)
+        return RgbValue(255.0 - other.r, 255.0 - other.g, 255.0 - other.b)
+
     def __repr__(self):
         return f'RgbValue(r={self.r}, g={self.g}, b={self.b})'
 

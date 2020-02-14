@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-imgix
+Mural
 ~~~~~
 
 A Python micro library for manipulating palette colors:
@@ -8,6 +8,6 @@ A Python micro library for manipulating palette colors:
 
 from .__version import __version__
 
-from .css import CssColor, RgbValue, RankedRgb
+from .color import CssColor, RgbValue, RankedRgb
 
 __all__ = ['CssColor', 'RgbValue', 'RankedRgb', '__version__', ]
