@@ -133,6 +133,18 @@ class RankedRgb:
 
 pat = r'(?:\.)(?P<css_name>[^ {]+)(?:\s+\{\s+)(?P<attr>[\w\-]+)(?::\s*)(?:[#])(?P<val>[\w]+)(?:\s+)(?P<priority>![\w]+)'
 
+class Palette:
+    def __init__(self):
+        pass
+
+    def from_styles(self, file: str) -> Iterable:
+        return parse_css_colors(file)
+
+    def unique_from_styles(self, file: str) -> Iterable:
+        return parse_unique_css_colors(file) 
+
+    def on_html(self, file: str):
+        pass
 
 def parse_unique_css_colors(stylesheet):
     css_values = []
