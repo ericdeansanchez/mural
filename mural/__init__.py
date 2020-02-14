@@ -10,4 +10,4 @@ from .__version import __version__
 
 from .color import CssColor, RgbValue, RankedRgb
 
-__all__ = ['CssColor', 'RgbValue', 'RankedRgb', '__version__', ]
+__all__ = ['Palette', 'CssColor', 'RgbValue', 'RankedRgb', '__version__']

@@ -143,6 +143,9 @@ class Palette:
     def unique_from_styles(self, file: str) -> Iterable:
         return parse_unique_css_colors(file) 
 
+    def rgb_from_styles(self, file: str) -> Iterable:
+        return parse_rgb_colors(file)
+
     def on_html(self, file: str):
         pass
 
