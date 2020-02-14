@@ -1,9 +1,0 @@
-README.md
-setup.py
-ericdeansanchez.egg-info/PKG-INFO
-ericdeansanchez.egg-info/SOURCES.txt
-ericdeansanchez.egg-info/dependency_links.txt
-ericdeansanchez.egg-info/top_level.txt
-mural/__init__.py
-mural/__version.py
-mural/css.py
