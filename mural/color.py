@@ -56,6 +56,11 @@ class RgbValue:
         return round((lighter.relative_luminance + 0.05) / (darker.relative_luminance + 0.05), precision)
 
     def complement(self):
+        """Calculate the naive complementary color for this `RgbValue`.
+        
+        Returns:
+            type: double -- A color complementary to this `RgbValue`.
+        """
         return RgbValue(255.0 - self.r, 255.0 - self.g, 255.0 - self.b)
 
     @classmethod
