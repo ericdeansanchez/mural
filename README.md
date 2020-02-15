@@ -7,8 +7,8 @@
   - [A Micro Library For Wrangling Color Palettes](#a-micro-library-for-wrangling-color-palettes)
   - [Table Of Contents](#table-of-contents)
     - [Overview](#overview)
-    - [Quick Start](#quick-start)
     - [Goals](#goals)
+    - [Quick Start](#quick-start)
 
 
 ### Overview
@@ -20,6 +20,26 @@ a dev-server.
 This isn't that. 
 
 **Mural** aims to be a library for wrangling color palettes. The goal is to combine a [few](https://webaim.org/resources/contrastchecker/) [great](https://docs.imgix.com/apis/url/color-palette/palette) [ideas](https://github.com/w3c/wcag/issues/695) into a library of code that allows developers to build their own palette wrangling workflows.
+
+### Goals
+
+Hey 👋🏼, thanks for stopping by. This was really fun and I wish I had more time to work before showing this off. I started off thinking about the use case. To be honest, I think I have a lot more to learn about this space.
+
+For example, the initial plan was to build a static analysis library that engineers could use to "put a number" on a question like "is this font over this background readable?" I soon found out that [algorithmically gauging perceived contrast ratios is not such an easy thing to do](https://github.com/w3c/wcag/issues/695). No worries.
+
+I had already written a regex to parse some css[0], so I began a little 'color-picker-from-a-color-palette'. Then I noticed you've already got a great one (the imgix sandbox). Cool! But, I still have to keep it going. 
+
+I transitioned to writing the readme, integrating sphinx & tox, and starting some examples/tutorials. If I did it again, I don't think I'd use sphinx again. The goal was to get a nice `readthedocs` site "for free," by simply writing in-code documentation and using sphinx-autodoc extension. It's just one of those things that adds some polish. I also licensed this code with what seems to be the most dev-friendly license: MIT.
+
+In the future, I think I'd try to integrate the features from the sandbox into a packaged cli tool. I see the library going in a few different directions:
+
+- for analysis
+  - the library could offer cli tools to check accessibility guidelines/best-practices
+  - this is the color-palette + lighthouse + webaim scenario
+- for design exploration
+  - I was actually surprised to not find a lot of tools to do the above accessibility checks
+  - I also think **it would be cool to explore** a bit in a local sandbox environment and keep what looks good.
+    - e.g. from something like **`$ mural generate-spec-from <images/>`** you could get back a list of templates.
 
 
 ### Quick Start
@@ -102,28 +122,6 @@ RgbValue(r=255, g=255, b=255)
 1.0
 >>> 
 ```
-
-### Goals
-
-Hey 👋🏼, thanks for stopping by. This was really fun and I wish I had more time to work before showing this off. I started off thinking about the use case. To be honest, I think I have a lot more to learn about this space.
-
-For example, the initial plan was to build a static analysis library that engineers could use to "put a number" on a question like "is this font over this background readable?" I soon found out that [algorithmically gauging perceived contrast ratios is not such an easy thing to do](https://github.com/w3c/wcag/issues/695). No worries.
-
-I had already written a regex to parse some css[0], so I began a little 'color-picker-from-a-color-palette'. Then I noticed you've already got a great one (the imgix sandbox). Cool! But, I still have to keep it going. 
-
-I transitioned to writing the readme, integrating sphinx & tox, and starting some examples/tutorials. If I did it again, I don't think I'd use sphinx again. The goal was to get a nice `readthedocs` site "for free," by simply writing in-code documentation and using sphinx-autodoc extension. It's just one of those things that adds some polish. I also licensed this code with what seems to be the most dev-friendly license: MIT.
-
-In the future, I think I'd try to integrate the features from the sandbox into a packaged cli tool. I see the library going in a few different directions:
-
-- for analysis
-  - the library could offer cli tools to check accessibility guidelines/best-practices
-  - this is the color-palette + lighthouse + webaim scenario
-- for design exploration
-  - I was actually surprised to not find a lot of tools to do the above accessibility checks
-  - I also think **it would be cool to explore** a bit in a local sandbox environment and keep what looks good.
-    - e.g. from something like **`$ mural generate-spec-from <images/>`** you could get back a list of templates.
-
-
 
 
 
